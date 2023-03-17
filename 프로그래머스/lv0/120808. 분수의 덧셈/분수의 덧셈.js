@@ -1,32 +1,31 @@
 function solution(numer1, denom1, numer2, denom2) {
     var answer = [];
+    //1. 분수 2개 더하기
+    //1-1) 분모의 합
     let denom = denom1 * denom2;
+    //1-1) 분자의 합
     let numer = numer1 * denom2 + numer2 * denom1;
     
-    //합쳐진 분자,분모 중 작은 수를 찾기
-    let minNum;
-    if(numer > denom){
-        minNum = denom;
+    
+   
+    
+    //2. 현재분수를 기약분수로 나타내기
+    let miner;
+    if(numer < denom){
+        miner = numer;
     }else{
-        minNum = numer;
+        miner = denom;
     }
     
-    //작은분모 기준으로 나누기(최대공약수 값 구하기)
-    // let min = 1;
-    // for(let i=minNum; i>=1; i--){
-    //     if(denom % minNum === 0 && numer % minNum === 0){
-    //         min *= i;
-    //         break;
-    //     }
-    // }
-    
-    while(true){
-        if(denom % minNum === 0 && numer % minNum === 0){
-            return [numer/minNum, denom/minNum]
+    for(let i=miner; i>=1; i--){
+        if(numer % i === 0 && denom % i === 0){
+            answer.push(numer/i);
+            answer.push(denom/i);
+            break;
         }
-        minNum--
+        
+        
     }
     
-    
- 
+    return answer;
 }
