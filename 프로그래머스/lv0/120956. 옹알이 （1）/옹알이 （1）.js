@@ -10,7 +10,6 @@ function solution(babbling) {
         for(let j=0; j<words.length; j++){
             if(babbling[i].includes(words[j])){
                 babbling[i] = babbling[i].replaceAll(words[j], '*');
-                
             }
         }
          console.log(babbling[i])
