@@ -1,10 +1,7 @@
 function solution(numbers) {
     var answer = [];
     
-    for(let i=0; i<numbers.length; i++) {
-        answer.push(numbers[i] * 2)
-    }
+    numbers = numbers.map(item => item * 2)
     
-    
-    return answer;
+    return numbers;
 }
