@@ -1,12 +1,16 @@
 function solution(dot) {
-    var answer;
-    let x = dot[0];
-    let y = dot[1];
+    var answer = 0;
+    const x = dot[0]
+    const y = dot[1]
+    if(x > 0 && y > 0){
+        return 1
+    }else if(x > 0 && y < 0){
+        return 4
+    }else if(x < 0 && y > 0){
+        return 2
+    }else{
+        return 3
+    }
     
-    if(x > 0 && y > 0) answer = 1;
-    if(x < 0 && y > 0) answer = 2;
-    if(x < 0 && y < 0) answer = 3;
-    if(x > 0 && y < 0) answer = 4;
     
-    return answer;
 }
