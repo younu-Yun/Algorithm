@@ -1,12 +1,10 @@
 function solution(n) {
-    var answer = 0;
-    let arr = [];
+    var answer = [];
     
     for(let i=1; i<=n; i++){
         if(n % i === 0){
-            arr.push([i, n/i])
+            answer.push(i)
         }
     }
-    
-    return arr.length;
+    return answer.length;
 }
