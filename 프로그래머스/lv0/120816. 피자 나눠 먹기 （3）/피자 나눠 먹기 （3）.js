@@ -1,10 +1,10 @@
 function solution(slice, n) {
-    var answer;
+    var answer = 0;
     
     if(n % slice === 0){
-        answer = parseInt(n / slice);
-    }else if(n % slice !== 0){
-        answer = parseInt(n / slice) + 1;
+        answer = Math.floor(n/slice)
+    }else{
+        answer = Math.floor(n/slice) + 1
     }
     
     return answer;
