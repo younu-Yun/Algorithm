@@ -1,12 +1,6 @@
 function solution(array, height) {
-    var answer = [];
+    var answer = 0;
     
-    for( let i=0; i<array.length; i++){
-        if(array[i] > height){
-            answer.push(array[i])
-        }
-    }
-    
-    
-    return answer.length;
+    const newArr = array.filter(item => item > height).length
+    return newArr;
 }
