@@ -1,10 +1,7 @@
 function solution(x) {
     var answer = true;
-    let acc = String(x)
-    .split('')
-    .reduce((acc, cur, idx) => {return Number(acc) + Number(cur)}, 0)
+    const sum = String(x).split('').reduce((prev, cur) => Number(prev) + Number(cur))
     
     
-    
-    return x % acc === 0 ? true : false;
+    return x % sum === 0 ? true : false;
 }
