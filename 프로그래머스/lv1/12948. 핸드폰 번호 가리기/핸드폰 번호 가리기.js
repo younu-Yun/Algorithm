@@ -1,13 +1,13 @@
 function solution(phone_number) {
-    var answer = '';
     
-    for(let i=0; i<phone_number.length; i++){
-        if(i < phone_number.length - 4){
-            answer += '*'
+    const arr = String(phone_number).split('')
+    const answer = arr.map((item, index) => {
+        if(arr.length - 4 <= index) {
+            return item
         }else{
-            answer += phone_number[i]
+            return item = '*'
         }
-    }
+    })
     
-    return answer;
+    return answer.join('');
 }
