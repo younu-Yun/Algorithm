@@ -1,8 +1,15 @@
 function solution(absolutes, signs) {
-    var answer = 123456789;
+    const answer = absolutes.map((item, index) => {
+        if(signs[index] === false){
+            return Number(-item)
+        }else{
+            return item
+        }
+    }).reduce((acc, cur) => acc + cur)
     
-    let arr = absolutes.reduce((acc, cur, idx) => {
-        return signs[idx] === true ?  acc+cur :  acc-cur
-    }, 0)
-    return arr;
+    
+    
+    
+    
+    return answer;
 }
