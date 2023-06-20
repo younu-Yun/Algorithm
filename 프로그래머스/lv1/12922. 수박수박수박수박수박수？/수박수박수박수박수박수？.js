@@ -1,14 +1,16 @@
 function solution(n) {
-    var answer = '';
-    
-    for(let i=1; i<=n; i++){
-        if(i % 2 !== 0){
-            answer += '수'
-        }else{
-            answer += '박'
-        }
+    const word = '수박';
+    if(n % 2 === 0){
+        return word.repeat(n/2);
+    }else{
+        let arr = word.repeat(Math.round(n/2)).split('');
+        
+        arr.pop()
+        
+        return arr.join('')
+        
     }
     
     
-    return answer;
 }
+    
