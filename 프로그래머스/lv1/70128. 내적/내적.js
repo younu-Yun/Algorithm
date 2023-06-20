@@ -1,9 +1,4 @@
 function solution(a, b) {
-    var answer = 1234567890;
-    
-    let arr = a.reduce((acc, cur, idx) => {
-        return acc + cur * b[idx]
-    }, 0)
-    
+    const arr = a.map((item, index) => item * b[index]).reduce((acc, cur) => acc + cur)
     return arr;
 }
