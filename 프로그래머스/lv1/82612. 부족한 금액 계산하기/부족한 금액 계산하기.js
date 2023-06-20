@@ -1,12 +1,10 @@
 function solution(price, money, count) {
     var answer = -1;
-    let add = 0;
+    let fee = 0;
     
-    for(let i = 1; i<=count; i++ ){
-        add += price * i
+    for(let i=1; i<=count; i++){
+        fee += price*i
     }
-    
-    
 
-    return money >= add ? 0 : add - money ;
+    return money - fee < 0 ? Math.abs(money - fee) : 0;
 }
