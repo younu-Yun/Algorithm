@@ -1,26 +1,20 @@
 function solution(s) {
     
-    let str = s.toLowerCase();
-    let arr = str.split(' ');
+    let answer = [];
+    const sArr = s.split(' ');
     
-    
-    let result = []
-
-     for(let i = 0; i<arr.length; i++){
-        var answer = '';
-        for(let j=0; j<arr[i].length; j++){
-            if(j === 0 || j % 2 === 0){
-                answer += arr[i][j].toUpperCase();
+    for(let i=0; i<sArr.length; i++){
+        let string = '';
+         for(let j=0; j<sArr[i].length; j++){
+            if(j % 2 === 0){
+                string += sArr[i][j].toUpperCase(); 
+                
             }else{
-                answer += arr[i][j];
+                string += sArr[i][j].toLowerCase();
             }
         }
-        result.push(answer);
-     }  
-        
-        
+        answer.push(string)
+    }
     
-    
-    
-    return result.join(' ');
+    return answer.join(' ');
 }
